@@ -1,0 +1,31 @@
+{
+  "name": "ll-poc-tokbox-chrome-extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "test": "nodeunit test/**/*.js",
+    "jshint": "./node_modules/.bin/jshint src/js/**/*.js*",
+    "build": "./scripts/build.sh",
+    "setup": "./scripts/setup.sh",
+    "package": "npm run jshint && npm run test && npm run build && zip package-$(cat package.json | jq -r .version).zip -r build manifest.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nbermudezs/ll-poc-tokbox-chrome-extension.git"
+  },
+  "author": "Nestor Bermudez <nestor.bermudez@agilityfeat.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nbermudezs/ll-poc-tokbox-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/nbermudezs/ll-poc-tokbox-chrome-extension#readme",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "jshint": "^2.8.0",
+    "nodeunit": "^0.9.1",
+    "q": "^1.4.1",
+    "reactify": "^1.1.1",
+    "watchify": "^3.4.0"
+  }
+}
